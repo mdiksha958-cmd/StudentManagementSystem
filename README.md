@@ -2,30 +2,33 @@
 
 A console-based Student Management System built using Python and PostgreSQL.
 
+This project allows users to manage student information and their marks through a simple command-line interface.
+
 ## Features
 
-### Student Management
-- Add Student
-- View Students
-- Update Student
-- Delete Student
-- Search Student by Name or Email
-
-### Marks Management
-- Add Marks
-- View Marks
-- Update Marks
-- Delete Marks
+- Add new students
+- View all students
+- Update student information
+- Delete students
+- Search students by name or email
+- Add marks for students
+- View student marks
+- Update marks
+- Delete marks
+- Input validation and error handling
+- PostgreSQL database integration
 
 ## Tech Stack
 
-- Python
-- PostgreSQL
-- psycopg2
-- python-dotenv
+- *Programming Language:* Python
+- *Database:* PostgreSQL
+- *Database Driver:* psycopg2
+- *Environment Management:* python-dotenv
+- *Version Control:* Git & GitHub
 
 ## Project Structure
 
+```text
 StudentManagementSystem/
 │
 ├── database/
@@ -35,73 +38,78 @@ StudentManagementSystem/
 │   ├── student_services.py
 │   └── marks_services.py
 │
-├── .env
-├── .gitignore
 ├── main.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 
-## Database
+## Database Setup
 
-The project uses PostgreSQL with the following tables:
+This project uses PostgreSQL as the database.
 
-### Students
-- student_id
-- name
-- email
-- phone
-- course
-- year
+### Database Name
 
-### Marks
-- mark_id
-- student_id
-- subject
-- marks
+```text
+student_management
 
-## Setup
+
+### Tables
+
+#### Students
+
+| Column | Description |
+|---|---|
+| student_id | Unique ID of the student |
+| name | Student name |
+| email | Student email |
+| phone | Student phone number |
+| course | Course name |
+| year | Current year |
+
+#### Marks
+
+| Column | Description |
+|---|---|
+| mark_id | Unique ID of the mark record |
+| student_id | ID of the student |
+| subject | Subject name |
+| marks | Marks obtained |
+
+The student_id in the marks table is related to the student_id in the students table.
+
+
+## Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/mdiksha958-cmd/StudentManagementSystem.git
+
+### 2. Navigate to the project directory
+
+```bash
 cd StudentManagementSystem
-```
 
-### 2. Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate the virtual environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### 4. Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
-```
 
-### 5. Configure environment variables
 
-Create a `.env` file in the project root and add your PostgreSQL database credentials:
+### 4. Configure environment variables
 
-env
+Create a `.env` file in the project root and add the following:
+
+```env
 DB_HOST=localhost
-DB_PORT=5433
 DB_NAME=student_management
 DB_USER=postgres
 DB_PASSWORD=your_password
+DB_PORT=5433
+```
 
-### 6. Run the application
+### 5. Run the application
 
 ```bash
 python main.py
 ```
-
