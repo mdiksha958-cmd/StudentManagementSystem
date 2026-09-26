@@ -115,3 +115,29 @@ DB_PORT=5433
 ```bash
 python main.py
 ```
+
+## Database Schema
+
+The application uses PostgreSQL with two related tables:
+
+### Students
+Stores basic student information such as:
+- Student ID
+- Name
+- Email
+- Phone
+- Course
+- Year
+
+### Marks
+Stores marks associated with students:
+- Mark ID
+- Student ID
+- Subject
+- Marks
+
+### Relationship
+
+The marks.student_id column references students.student_id
+as a foreign key, establishing a one-to-many relationship between
+students and marks.
