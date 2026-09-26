@@ -17,6 +17,8 @@ This project allows users to manage student information and their marks through 
 - Delete marks
 - Input validation and error handling
 - PostgreSQL database integration
+- Relational database design with foreign key relationship
+- Environment-based database configuration
 
 ## Tech Stack
 
