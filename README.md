@@ -211,3 +211,37 @@ You can execute `schema.sql` using PostgreSQL or pgAdmin.
 ```bash
 python main.py
 ```
+
+## Usage
+
+After running the application, the following menu is displayed:
+
+1. Add Student
+2. View Students
+3. Update Student
+4. Delete Student
+5. Add Marks
+6. View Marks
+7. Update Marks
+8. Delete Marks
+9. Search Student
+10. Exit
+
+The application allows users to manage student information and their marks through a simple console-based interface.
+
+## Project Highlights
+
+- Implemented CRUD operations for students and marks.
+- Used PostgreSQL with a foreign key relationship between students and marks.
+- Used psycopg2 for database connectivity.
+- Used environment variables to keep database credentials outside the source code.
+- Followed a modular service-based structure for better code organization.
+- Added input validation and database error handling.
+
+## Future Improvements
+
+- Add user authentication and role-based access.
+- Add a graphical or web-based interface.
+- Add student performance reports and grade calculation.
+- Add pagination and advanced search/filtering.
+- Add automated tests.
