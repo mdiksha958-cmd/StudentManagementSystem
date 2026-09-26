@@ -6,13 +6,16 @@ This project allows users to manage student information and their marks through 
 
 ## Features
 
+### Student Management
 - Add new students
 - View all students
 - Update student information
 - Delete students
 - Search students by name or email
+
+### Marks Management
 - Add marks for students
-- View student marks
+- View all student marks
 - Update marks
 - Delete marks
 - Input validation and error handling
@@ -141,3 +144,70 @@ Stores marks associated with students:
 The marks.student_id column references students.student_id
 as a foreign key, establishing a one-to-many relationship between
 students and marks.
+
+## Installation & Setup
+
+### Prerequisites
+
+Make sure the following are installed:
+
+- Python 3.x
+- PostgreSQL
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mdiksha958-cmd/StudentManagementSystem.git
+cd StudentManagementSystem
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file in the project root:
+
+```env
+DB_HOST=localhost
+DB_NAME=student_management
+DB_USER=postgres
+DB_PASSWORD=your_postgresql_password
+DB_PORT=5433
+
+
+Replace your_postgresql_password with your PostgreSQL password.
+
+### 5. Set up the database
+
+Create a PostgreSQL database named:
+
+```text
+student_management
+```
+
+Run the SQL commands from `schema.sql` to create the required tables and relationships.
+
+You can execute `schema.sql` using PostgreSQL or pgAdmin.
+
+### 6. Run the application
+
+```bash
+python main.py
+```
